@@ -1,0 +1,29 @@
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.btn-head {
+    float: right;
+}
+
+.alert {
+    margin: 5px 0 10px 0;
+}
+
+#footer {
+    padding-top: 1%;
+    border-top: 2px solid black;
+}
+
+#country-selector {
+    margin-top: 10px;
+}
+
+#country-selector label {
+    line-height: calc(2em + .75rem + 5px);
+    padding-right: 10px;
+}
+
+.table td {
+    vertical-align: middle;
+}
