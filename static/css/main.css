@@ -20,7 +20,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #country-selector label {
-    line-height: calc(2em + .75rem + 5px);
     padding-right: 10px;
 }
 
