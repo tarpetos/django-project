@@ -1,3 +1,27 @@
+body {
+    /*background: repeating-linear-gradient(to bottom right, #00b2ff 0%, #47ff33 100%) fixed;*/
+    /*background: radial-gradient(#80FFDB, #5390D9);*/
+    background: radial-gradient(#DECBA4, #708686);
+}
+
+button {
+    transition: all .5s ease;
+    color: white;
+    border: 3px solid black;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    font-size: 17px;
+    background-color: black;
+    padding: 10px;
+    outline: none;
+    border-radius: 0.375rem;
+}
+button:hover {
+    color: black;
+    background-color: #fff;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
@@ -10,13 +34,8 @@ h1, h2, h3, h4, h5, h6 {
     margin: 5px 0 10px 0;
 }
 
-#footer {
-    padding-top: 1%;
-    border-top: 2px solid black;
-}
-
-#country-selector {
-    margin-top: 10px;
+#header {
+    margin-bottom: 2%;
 }
 
 #country-selector label {
@@ -25,4 +44,86 @@ h1, h2, h3, h4, h5, h6 {
 
 .table td {
     vertical-align: middle;
+}
+
+.date-table-cell {
+    text-align: center;
+}
+
+.date-table-cell-user-number {
+    vertical-align: middle;
+}
+
+.date-table-cell-username {
+    min-width: 200px;
+    vertical-align: middle;
+}
+
+/* Only for usage_page */
+.link-table-name {
+    display: flex;
+    justify-content: center;
+}
+
+.table-name {
+    font-weight: bold;
+}
+
+form {
+    width: 80%;
+    margin: 3% auto;
+}
+
+.form-element {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+}
+
+.chosen-image-full {
+    display: flex;
+}
+
+.chosen-image-full label {
+    border-radius: 0.375rem 0 0 0.375rem;
+}
+
+.chosen-image-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ced4da;
+    border-radius: 0 0.375rem 0.375rem 0;
+    border-left: none;
+    background-color: white;
+}
+
+.chosen-image-right a {
+    margin-left: 10px;
+}
+
+textarea.form-control {
+    min-height: calc(2em + 10rem + 2px);
+}
+
+.chosen-image-right div {
+    margin-right: 10px;
+}
+
+.btn_container {
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn_container button {
+    flex: max-content;
+    margin: 0 5% 0 5%;
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1560px;
+    }
 }
