@@ -16,6 +16,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from users import views as user_views
+
 urlpatterns = [
+    path('', user_views.users_list, name='home'),
+    path('usage/', user_views.usage_table, name='usage'),
+    path('countries/', user_views.countries_list, name='countries'),
+
+    path('users/add', user_views.users_add, name='users_add'),
+    path('users/<int:uid>/edit', user_views.users_edit, name='users_edit'),
+    path('users/<int:uid>/usage', user_views.users_usage, name='users_usage'),
+    path('users/<int:uid>/delete', user_views.users_delete, name='users_delete'),
+
+    path('countries/add', user_views.countries_add, name='countries_add'),
+    path('countries/<int:cid>/edit', user_views.countries_edit, name='countries_edit'),
+    path('countries/<int:cid>/usage', user_views.users_usage, name='countries_usage'),
+    path('countries/<int:cid>/delete', user_views.countries_delete, name='countries_delete'),
+
     path('admin/', admin.site.urls),
 ]

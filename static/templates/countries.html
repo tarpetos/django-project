@@ -10,7 +10,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="d-flex flex-column h-100">
     <div class="container">
@@ -34,7 +34,7 @@
             <div class="col-sm-12">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active">Users</a>
+                        <a href="#" class="nav-link">Users</a>
                     </li>
 
                     <li class="nav-item">
@@ -42,7 +42,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Countries</a>
+                        <a href="#" class="nav-link active">Countries</a>
                     </li>
                 </ul>
             </div>
@@ -53,8 +53,8 @@
                 <div class="alert alert-warning" role="alert">Changes have been cancelled.</div>
 
                 <div class="row" id="table-head">
-                    <div class="col-sm-8 my-3"><h2>User Base</h2></div>
-                    <div class="col-sm-4"><a href="#" class="btn btn-primary btn-head my-3" role="button">Add User</a></div>
+                    <div class="col-sm-8 my-3"><h2>Country List</h2></div>
+                    <div class="col-sm-4"><a href="#" class="btn btn-primary btn-head my-3" role="button">Add Country</a></div>
                 </div>
 
                 <div>
@@ -62,10 +62,8 @@
                         <thead>
                             <tr>
                                 <th><a href="#" class="text-decoration-none">№</a></th>
-                                <th>Photo</th>
-                                <th><a href="#" class="text-decoration-none">Last Name &uarr;</a></th>
-                                <th><a href="#" class="text-decoration-none">First Name</a></th>
-                                <th>Telegram ID</th>
+                                <th><a href="#" class="text-decoration-none">Country &uarr;</a></th>
+                                <th>Unique users</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -73,10 +71,8 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td><img width="35" height="35" src="./img/taras_hevlich.png" alt="" class="rounded-circle"></td>
-                                <td><a title="Edit" href="#" class="text-decoration-none">Hevlich</a></td>
-                                <td><a title="Edit" href="#" class="text-decoration-none">Taras</a></td>
-                                <td>441547155</td>
+                                <td><a title="Edit" href="#" class="text-decoration-none">Ukraine</a></td>
+                                <td>1</td>
                                 <td>
                                     <div class="dropdown">
                                         <button type="button"
@@ -95,32 +91,8 @@
 
                             <tr>
                                 <td>2</td>
-                                <td><img width="35" height="35" src="./img/default.png" alt="" class="rounded-circle"></td>
-                                <td><a title="Edit" href="#" class="text-decoration-none">Clever</a></td>
-                                <td><a title="Edit" href="#" class="text-decoration-none">Polak</a></td>
-                                <td>321453123</td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button type="button"
-                                                class="btn btn-primary dropdown-toggle"
-                                                data-toggle="dropdown">
-                                            Action
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a href="#" class="dropdown-item">Edit</a>
-                                            <a href="#" class="dropdown-item">Password Generator Usage</a>
-                                            <a href="#" class="dropdown-item">Delete</a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td><img width="35" height="35" src="./img/mateusz_kieliszkowski.png" alt="" class="rounded-circle"></td>
-                                <td><a title="Edit" href="#" class="text-decoration-none">Kieliszkowski</a></td>
-                                <td><a title="Edit" href="#" class="text-decoration-none">Mateusz</a></td>
-                                <td>435123555</td>
+                                <td><a title="Edit" href="#" class="text-decoration-none">Poland</a></td>
+                                <td>2</td>
                                 <td>
                                     <div class="dropdown">
                                         <button type="button"
@@ -170,6 +142,10 @@
                 </div>
             </div>
         </div>
+
+<!--        <div class="row" id="footer">-->
+<!--            <div class="col-sm-12">&copy; 2023 Password Generator Accounting Service</div>-->
+<!--        </div>-->
     </div>
 
     <footer class="footer mt-auto py-3 bg-dark">
