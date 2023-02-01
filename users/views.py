@@ -4,7 +4,33 @@ from django.http import HttpResponse
 
 # Views for users
 def users_list(request):
-    return render(request, 'users/users_list.html', {})
+    users = (
+        {
+            'id': 1,
+            'first_name': 'Taras',
+            'last_name': 'Hevlich',
+            'telegram_id': 441547155,
+            'image': '/img/taras_hevlich.png'
+        },
+
+        {
+            'id': 2,
+            'first_name': 'Polak',
+            'last_name': 'Clever',
+            'telegram_id': 321453123,
+            'image': '/img/default.png'
+        },
+
+        {
+            'id': 3,
+            'first_name': 'Mateusz',
+            'last_name': 'Kieliszkowski',
+            'telegram_id': 435123555,
+            'image': '/img/mateusz_kieliszkowski.png'
+        },
+    )
+
+    return render(request, 'users/users_list.html', {'users': users})
 
 
 def users_add(request):

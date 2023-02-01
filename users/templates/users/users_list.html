@@ -10,7 +10,8 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../../css/main.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body class="d-flex flex-column h-100">
     <div class="container">
@@ -71,12 +72,13 @@
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td><img width="35" height="35" src="../../img/taras_hevlich.png" alt="" class="rounded-circle"></td>
-                                <td><a title="Edit" href="{% url 'users_edit' 1 %}" class="text-decoration-none">Hevlich</a></td>
-                                <td><a title="Edit" href="{% url 'users_edit' 1 %}" class="text-decoration-none">Taras</a></td>
-                                <td>441547155</td>
+                            {% for user in users %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td><img width="35" height="35" src="{% static user.image %}" alt="" class="rounded-circle"></td>
+                                    <td><a title="Edit" href="{% url 'users_edit' user.id %}" class="text-decoration-none">{{ user.last_name }}</a></td>
+                                    <td><a title="Edit" href="{% url 'users_edit' user.id %}" class="text-decoration-none">{{ user.first_name }}</a></td>
+                                    <td>{{ user.telegram_id }}</td>
                                 <td>
                                     <div class="dropdown">
                                         <button type="button"
@@ -85,57 +87,14 @@
                                             Action
                                         </button>
                                         <div class="dropdown-menu">
-                                            <a href="{% url 'users_edit' 1 %}" class="dropdown-item">Edit</a>
-                                            <a href="{% url 'users_usage' 1 %}" class="dropdown-item">Password Generator Usage</a>
-                                            <a href="{% url 'users_delete' 1 %}" class="dropdown-item">Delete</a>
+                                            <a href="{% url 'users_edit' user.id %}" class="dropdown-item">Edit</a>
+                                            <a href="{% url 'users_usage' user.id %}" class="dropdown-item">Password Generator Usage</a>
+                                            <a href="{% url 'users_delete' user.id %}" class="dropdown-item">Delete</a>
                                         </div>
                                     </div>
                                 </td>
-                            </tr>
-
-                            <tr>
-                                <td>2</td>
-                                <td><img width="35" height="35" src="../../img/default.png" alt="" class="rounded-circle"></td>
-                                <td><a title="Edit" href="{% url 'users_edit' 2 %}" class="text-decoration-none">Clever</a></td>
-                                <td><a title="Edit" href="{% url 'users_edit' 2 %}" class="text-decoration-none">Polak</a></td>
-                                <td>321453123</td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button type="button"
-                                                class="btn btn-primary dropdown-toggle"
-                                                data-toggle="dropdown">
-                                            Action
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a href="{% url 'users_edit' 2 %}" class="dropdown-item">Edit</a>
-                                            <a href="{% url 'users_usage' 2 %}" class="dropdown-item">Password Generator Usage</a>
-                                            <a href="{% url 'users_delete' 2 %}" class="dropdown-item">Delete</a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td><img width="35" height="35" src="../../img/mateusz_kieliszkowski.png" alt="" class="rounded-circle"></td>
-                                <td><a title="Edit" href="{% url 'users_edit' 3 %}" class="text-decoration-none">Kieliszkowski</a></td>
-                                <td><a title="Edit" href="{% url 'users_edit' 3 %}" class="text-decoration-none">Mateusz</a></td>
-                                <td>435123555</td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button type="button"
-                                                class="btn btn-primary dropdown-toggle"
-                                                data-toggle="dropdown">
-                                            Action
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a href="{% url 'users_edit' 3 %}" class="dropdown-item">Edit</a>
-                                            <a href="{% url 'users_usage' 3 %}" class="dropdown-item">Password Generator Usage</a>
-                                            <a href="{% url 'users_delete' 3 %}" class="dropdown-item">Delete</a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                                </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                     <nav aria-label="Page navigation">
