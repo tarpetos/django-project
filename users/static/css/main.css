@@ -4,6 +4,10 @@ body {
     background: radial-gradient(#DECBA4, #708686);
 }
 
+.footer-container {
+    margin-left: 5%;
+}
+
 button {
     transition: all .5s ease;
     color: white;
@@ -120,6 +124,16 @@ textarea.form-control {
     flex: max-content;
     margin: 0 5% 0 5%;
 }
+
+.pagination {
+    margin: 3% 0 3% 0;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+/*a {*/
+/*    color: #097e06;*/
+/*}*/
 
 @media (min-width: 1600px) {
     .container {

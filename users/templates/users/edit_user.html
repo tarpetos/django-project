@@ -1,8 +1,10 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
     <meta charset="UTF-8">
-    <title>Password Service</title>
+    <title>Users Editor</title>
     <meta name="description" content="Accounting For the Use of the Password Generator">
     <link
       rel="stylesheet"
@@ -10,7 +12,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="{{ PORTAL_URL }}{% static 'css/main.css' %}">
 </head>
 <body class="d-flex flex-column h-100">
     <div class="container">

@@ -1,0 +1,100 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block meta_title %} Usage {% endblock meta_title %}
+
+{% block title %} Usage Accounting {% endblock title %}
+
+{% block content %}
+    <div class="link-table-name">
+        <a href="#" class="text-decoration-none">&lArr;</a>
+        <div class="table-name">&nbsp;January 2023&nbsp;</div>
+        <a href="#" class="text-decoration-none">&rArr;</a>
+    </div>
+
+    <table class="table table-bordered table-hover table-striped table-responsive">
+        <thead>
+            <tr>
+                <th class="date-table-cell-user-number">№</th>
+                <th class="date-table-cell-username ">User</th>
+
+                <th class="date-table-cell">Su 1</th>
+                <th class="date-table-cell">Mo 2</th>
+                <th class="date-table-cell">Tu 3</th>
+                <th class="date-table-cell">We 4</th>
+                <th class="date-table-cell">Th 5</th>
+                <th class="date-table-cell">Fr 6</th>
+                <th class="date-table-cell">Sa 7</th>
+
+                <th class="date-table-cell">Su 8</th>
+                <th class="date-table-cell">Mo 9</th>
+                <th class="date-table-cell">Tu 10</th>
+                <th class="date-table-cell">We 11</th>
+                <th class="date-table-cell">Th 12</th>
+                <th class="date-table-cell">Fr 13</th>
+                <th class="date-table-cell">Sa 14</th>
+
+                <th class="date-table-cell">Su 15</th>
+                <th class="date-table-cell">Mo 16</th>
+                <th class="date-table-cell">Tu 17</th>
+                <th class="date-table-cell">We 18</th>
+                <th class="date-table-cell">Th 19</th>
+                <th class="date-table-cell">Fr 20</th>
+                <th class="date-table-cell">Sa 21</th>
+
+                <th class="date-table-cell">Su 22</th>
+                <th class="date-table-cell">Mo 23</th>
+                <th class="date-table-cell">Tu 24</th>
+                <th class="date-table-cell">We 25</th>
+                <th class="date-table-cell">Th 26</th>
+                <th class="date-table-cell">Fr 27</th>
+                <th class="date-table-cell">Sa 28</th>
+
+                <th class="date-table-cell">Su 29</th>
+                <th class="date-table-cell">Mo 30</th>
+                <th class="date-table-cell">Tu 31</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for user in users_statistics %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><a title="Edit" href="{% url 'users_edit' user.id %}" class="text-decoration-none">{{ user.username }}</a></td>
+
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+                <td class="date-table-cell"><input type="checkbox"></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

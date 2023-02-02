@@ -1,0 +1,50 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block meta_title %} Countries {% endblock meta_title %}
+
+{% block title %} Country List {% endblock title %}
+{% block add_btn %}
+    <div class="col-sm-4"><a href="{% url 'countries_add' %}" class="btn btn-primary btn-head my-3" role="button">Add Country</a></div>
+{% endblock add_btn %}
+
+{% block content %}
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th><a href="#" class="text-decoration-none">№</a></th>
+                <th><a href="#" class="text-decoration-none">Country &uarr;</a></th>
+                <th>Unique users</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for country in countries %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td><a title="Edit" href="{% url 'countries_edit' country.id %}" class="text-decoration-none">{{ country.country_name }}</a></td>
+                    <td>{{ country.unique_users }}</td>
+                    <td>
+                        <div class="dropdown">
+                            <button type="button"
+                                    class="btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown">
+                                Action
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="{% url 'countries_edit' country.id %}" class="dropdown-item">Edit</a>
+                                <a href="{% url 'countries_usage' country.id %}" class="dropdown-item">Password Generator Usage</a>
+                                <a href="{% url 'countries_delete' country.id %}" class="dropdown-item">Delete</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
+
+{% block pagination %}
+    {% include "users/pagination.html" %}
+{% endblock pagination %}
