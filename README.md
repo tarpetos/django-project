@@ -1,0 +1,1 @@
+# First Django web application that is being developed by me
