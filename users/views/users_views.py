@@ -1,33 +1,29 @@
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 from django.http import HttpResponse
+from users.models.users import User
 
 
 def users_list(request):
-    users = (
-        {
-            'id': 1,
-            'first_name': 'Taras',
-            'last_name': 'Hevlich',
-            'telegram_id': 441547155,
-            'image': '/img/taras_hevlich.png'
-        },
+    users = User.objects.all()
 
-        {
-            'id': 2,
-            'first_name': 'Polak',
-            'last_name': 'Clever',
-            'telegram_id': 321453123,
-            'image': '/img/default.png'
-        },
+    users_order = request.GET.get('order_by', 'last_name')
 
-        {
-            'id': 3,
-            'first_name': 'Mateusz',
-            'last_name': 'Kieliszkowski',
-            'telegram_id': 435123555,
-            'image': '/img/mateusz_kieliszkowski.png'
-        },
-    )
+    if users_order in ('last_name', 'first_name', 'telegram_id'):
+        users = users.order_by(users_order)
+        if request.GET.get('reverse', '') == '1':
+            users = users.reverse()
+
+    paginator = Paginator(users, 4)
+    current_page = request.GET.get('page')
+
+    try:
+        users = paginator.page(current_page)
+    except PageNotAnInteger:
+        users = paginator.page(1)
+    except EmptyPage:
+        users = paginator.page(paginator.num_pages)
+
 
     return render(request, 'users/users_list.html', {'users': users})
 
