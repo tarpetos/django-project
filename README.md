@@ -1,1 +1,1 @@
-# First Django web application that is being developed by me
+# First Django web application <br> that is being developed by me

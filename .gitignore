@@ -159,4 +159,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-users/templates/templates/
+media/
+
+demo_data.json
